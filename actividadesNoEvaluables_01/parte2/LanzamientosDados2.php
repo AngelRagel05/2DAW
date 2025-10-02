@@ -1,21 +1,28 @@
 <?php
 session_start(); // Necesario para usar variables de sesión
 
+// Si no existe todavía el historial en la sesión, lo creamos como un array vacío
 if (!isset($_SESSION['historial'])) {
     $_SESSION['historial'] = [];
 }
 
+// Variable para mostrar el último resultado
 $resultado = "";
 
+// Si se pulsa el botón "Tirar dado" (GET['lanzar'])
 if (isset($_GET['lanzar'])) {
+    // Random del 1 al 6
     $dado = rand(1, 6);
 
+    // Mostrar resultado
     $resultado = "Has sacado un " . $dado;
     $resultado .= "<br><img src='img/cara{$dado}.png' alt='Cara{$dado}' width='100' height='100'>";
 
+    // Guardar este lanzamiento en el historial
     $_SESSION['historial'][] = $dado;
 }
 
+// Si el usuario pulsa "Reiniciar Historial", vaciamos el historial   ******Preguntar a Sergio como funciona esto**************
 if (isset($_GET['reset'])) {
     $_SESSION['historial'] = [];
 }
@@ -48,11 +55,13 @@ if (isset($_GET['reset'])) {
         <div class="mt-4">
             <h2>Historial de lanzamientos:</h2>
             <?php
+            // Si hay lanzamientos en la sesión, los mostramos            
             if (!empty($_SESSION['historial'])) {
                 foreach ($_SESSION['historial'] as $index => $valor) {
                     echo "Lanzamiento " . ($index + 1) . ": " . $valor . "<br>";
                 }
             } else {
+                // Si todavía no hay lanzamientos                
                 echo "No hay lanzamientos en el historial.";
             }
             ?>
