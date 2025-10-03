@@ -80,8 +80,8 @@ if (isset($_POST['sujeto']) && isset($_POST['accion']) && isset($_POST['cierre']
             // Mostrar la frase
             echo "<div class='alert alert-info mt-4 text-center'>$frase</div>";
 
-            // Generar imagen random entre 1 y 4
-            $numImg = rand(1, 4);
+            // Generar imagen random entre 1 y 5
+            $numImg = rand(1, 5);
             $imagen = "img/random{$numImg}.png";
 
             // Mostrar la imagen
