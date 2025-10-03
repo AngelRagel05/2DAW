@@ -1,86 +1,79 @@
 <?php
-// Inicializamos variable de resultado
+// Inicializamos variables
 $frase = "";
 $sujeto = "";
 $accion = "";
 $cierre = "";
-$sujetoCustom = "";
-$accionCustom = "";
-$cierreCustom = "";
 
-// Arrays para las frases aleatorias
+// Arrays para aleatorio
 $sujetos = [
-    "Yo en tu lugar",
-    "La verdad es que",
-    "Tú sabes que",
-    "No hay duda de que",
-    "Al final"
+    "Yo en tu lugar", 
+    "La verdad es que", 
+    "Tú sabes que", 
+    "No hay duda de que", 
+    "Al final",
+    "Está claro que", 
+    "Como siempre digo", 
+    "No podemos olvidar que", 
+    "Sin duda", 
+    "Debes recordar que"
 ];
 
 $acciones = [
-    " siempre hay que invertir en ",
-    " lo importante es ",
-    " nunca subestimes ",
-    " yo siempre digo que ",
-    " el secreto está en "
+    "siempre hay que invertir en", 
+    "lo importante es", 
+    "nunca subestimes", 
+    "yo siempre digo que", 
+    "el secreto está en",
+    "conviene prestar atención a", 
+    "hay que cuidar", 
+    "siempre se debe valorar", 
+    "es fundamental entender", 
+    "no olvides analizar"
 ];
 
 $cierres = [
-    "la bolsa de valores",
-    "el no tener dinero congelado en el banco",
-    "los chemtrails",
-    "la nube",
-    "las criptocoins"
+    "la bolsa de valores", 
+    "el no tener dinero congelado en el banco", 
+    "los chemtrails", 
+    "la nube", 
+    "las criptocoins",
+    "los intereses compuestos", 
+    "el mercado inmobiliario", 
+    "la energía solar", 
+    "las inversiones alternativas", 
+    "el ahorro inteligente"
 ];
 
-// Si el formulario ha sido enviado
+// Si se pulsa enviar formulario
 if (isset($_POST['submit'])) {
-    // Recuperar valores de los selects
-    $sujeto = $_POST['sujeto'];
-    $accion = $_POST['accion'];
-    $cierre = $_POST['cierre'];
+    // Valores de selects
+    $sujeto = $_POST['sujeto'] ?? "";
+    $accion = $_POST['accion'] ?? "";
+    $cierre = $_POST['cierre'] ?? "";
 
-    // Imputs personalizados
-    $sujetoCustom = trim($_POST['sujeto_custom']);
-    $accionCustom = trim($_POST['accion_custom']);
-    $cierreCustom = trim($_POST['cierre_custom']);
+    // Inputs custom
+    $sujeto_custom = trim($_POST['sujeto_custom'] ?? "");
+    $accion_custom = trim($_POST['accion_custom'] ?? "");
+    $cierre_custom = trim($_POST['cierre_custom'] ?? "");
 
+    // Prioridad a los inputs custom si no están vacíos
     if ($sujeto_custom !== "") $sujeto = $sujeto_custom;
     if ($accion_custom !== "") $accion = $accion_custom;
     if ($cierre_custom !== "") $cierre = $cierre_custom;
 
-    // Construir la frase final
-    $frase = $sujeto . $accion . $cierre;
+    $frase = $sujeto . " " . $accion . " " . $cierre . ".";
+
 }
 
-// Si se pulsa el botón de frase aleatoria
+// Si se pulsa generar aleatoria
 if (isset($_POST['random'])) {
-    // Seleccionar aleatoriamente un elemento de cada array
     $sujeto = $sujetos[array_rand($sujetos)];
     $accion = $acciones[array_rand($acciones)];
     $cierre = $cierres[array_rand($cierres)];
 
-    // Construir la frase final
-    $frase = $sujeto . $accion . $cierre . ".";
-}
+    $frase = $sujeto . " " . $accion . " " . $cierre . ".";
 
-// Si se pulsa el botón normal (submit)
-if (isset($_POST['submit'])) {
-    $sujeto = $_POST['sujeto'];
-    $accion = $_POST['accion'];
-    $cierre = $_POST['cierre'];
-
-    // Inputs custom
-    $sujeto_custom = trim($_POST['sujeto_custom']);
-    $accion_custom = trim($_POST['accion_custom']);
-    $cierre_custom = trim($_POST['cierre_custom']);
-
-    // Si los inputs custom no están vacíos, tienen prioridad
-    if ($sujeto_custom !== "") $sujeto = $sujeto_custom;
-    if ($accion_custom !== "") $accion = $accion_custom;
-    if ($cierre_custom !== "") $cierre = $cierre_custom;
-
-    $frase = $sujeto . $accion . $cierre . ".";
 }
 ?>
 
@@ -97,9 +90,9 @@ if (isset($_POST['submit'])) {
 
 <body class="bg-light">
 
-    <div class="container mt-5">
-        <div class="card shadow p-4">
-            <h2 class="mb-4 text-center">Constructor de Cuñados</h2>
+    <div class="container mt-2">
+        <div class="card shadow p-3">
+            <h3 class="mb-4 text-center">Constructor de Cuñados</h3>
 
             <form action="" method="post">
 
