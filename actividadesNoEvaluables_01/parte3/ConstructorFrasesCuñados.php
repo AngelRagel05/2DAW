@@ -1,5 +1,16 @@
 <?php
+// Inicializamos variable de resultado
+$frase = "";
 
+// Si el formulario se ha enviado (hay parámetros en $_GET)
+if (isset($_GET['sujeto']) && isset($_GET['accion']) && isset($_GET['cierre'])) {
+    $sujeto = $_GET['sujeto'];
+    $accion = $_GET['accion'];
+    $cierre = $_GET['cierre'];
+
+    // Construir frase concatenando
+    $frase = $sujeto . $accion . $cierre . ".";
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,39 +24,75 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 
-<body>
-    <form action="">
-        <label for="sujeto">Elige un sujeto:</label>
-        <select name="sujeto" id="sujeto">
-            <option value="Yo en tu lugar">Yo en tu lugar </option>
-            <option value="La verdad es que">La verdad es que</option>
-            <option value="Tú sabes que">Tú sabes que</option>
-            <option value="No hay duda de que">No hay duda de que</option>
-            <option value="Al final">Al final</option>
-        </select>
+<body class="bg-light">
 
-        <br>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h2 class="mb-4 text-center">Constructor de Cuñados</h2>
 
-        <label for="accion">Elige una acción:</label>
-        <select name="accion" id="accion">
-            <option value="siempre hay que invertir en"> siempre hay que invertir en </option>
-            <option value="lo importante es"> lo importante es </option>
-            <option value="nunca subestimes"> nunca subestimes </option>
-            <option value="yo siempre digo que"> yo siempre digo que </option>
-            <option value="el secreto está en"> el secreto está en </option>
-        </select>
+            <form action="">
 
-        <br>
+                <!-- Sujeto -->
+                <div class="mb-3">
+                    <label for="sujeto" class="form-label">Elige un sujeto:</label>
+                    <select class="form-select" name="sujeto" id="sujeto">
+                        <option value="Yo en tu lugar">Yo en tu lugar</option>
+                        <option value="La verdad es que">La verdad es que</option>
+                        <option value="Tú sabes que">Tú sabes que</option>
+                        <option value="No hay duda de que">No hay duda de que</option>
+                        <option value="Al final">Al final</option>
+                    </select>
+                </div>
 
-        <label for="cierre">Elige un cierre:</label>
-        <select name="cierre" id="cierre">
-            <option value="la bolsa de valores">la bolsa de valores</option>
-            <option value="el no tener dinero congelado en el banco">el no tener dinero congelado en el banco</option>
-            <option value="los chemtrails">los chemtrails</option>
-            <option value="la nube">la nube</option>
-            <option value="las criptocoins">las criptocoins</option>
-        </select>
-    </form>
+                <!-- Acción -->
+                <div class="mb-3">
+                    <label for="accion" class="form-label">Elige una acción:</label>
+                    <select class="form-select" name="accion" id="accion">
+                        <option value=" siempre hay que invertir en ">Siempre hay que invertir en</option>
+                        <option value=" lo importante es ">Lo importante es</option>
+                        <option value=" nunca subestimes ">Nunca subestimes</option>
+                        <option value=" yo siempre digo que ">Yo siempre digo que</option>
+                        <option value=" el secreto está en ">El secreto está en</option>
+                    </select>
+                </div>
+
+                <!-- Cierre -->
+                <div class="mb-3">
+                    <label for="cierre" class="form-label">Elige un cierre:</label>
+                    <select class="form-select" name="cierre" id="cierre">
+                        <option value="la bolsa de valores">La bolsa de valores</option>
+                        <option value="el no tener dinero congelado en el banco">El no tener dinero congelado en el banco</option>
+                        <option value="los chemtrails">Los chemtrails</option>
+                        <option value="la nube">La nube</option>
+                        <option value="las criptocoins">Las criptocoins</option>
+                    </select>
+                </div>
+
+                <!-- Botón -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Enviar formulario</button>
+                </div>
+            </form>
+        </div>
+
+        <?php
+        if ($frase != "") {
+            // Mostrar la frase
+            echo "<div class='alert alert-info mt-4 text-center'>$frase</div>";
+
+            // Generar imagen random entre 1 y 4
+            $numImg = rand(1, 4);
+            $imagen = "img/random{$numImg}.png";
+
+            // Mostrar la imagen
+            echo "<div class='text-center mt-3'>
+            <img src='$imagen' alt='Imagen cuñada' class='img-fluid rounded shadow' style='max-width:200px;'>
+          </div>";
+        }
+        ?>
+
+    </div>
+
 </body>
 
 </html>
