@@ -3,10 +3,10 @@
 $frase = "";
 
 // Si el formulario se ha enviado (hay parámetros en $_GET)
-if (isset($_GET['sujeto']) && isset($_GET['accion']) && isset($_GET['cierre'])) {
-    $sujeto = $_GET['sujeto'];
-    $accion = $_GET['accion'];
-    $cierre = $_GET['cierre'];
+if (isset($_POST['sujeto']) && isset($_POST['accion']) && isset($_POST['cierre'])) {
+    $sujeto = $_POST['sujeto'];
+    $accion = $_POST['accion'];
+    $cierre = $_POST['cierre'];
 
     // Construir frase concatenando
     $frase = $sujeto . $accion . $cierre . ".";
@@ -30,7 +30,7 @@ if (isset($_GET['sujeto']) && isset($_GET['accion']) && isset($_GET['cierre'])) 
         <div class="card shadow p-4">
             <h2 class="mb-4 text-center">Constructor de Cuñados</h2>
 
-            <form action="">
+            <form action="" method="post">
 
                 <!-- Sujeto -->
                 <div class="mb-3">
