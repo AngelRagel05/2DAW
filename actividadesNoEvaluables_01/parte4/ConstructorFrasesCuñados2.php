@@ -92,7 +92,7 @@ if (isset($_POST['random'])) {
 
     <div class="container mt-2">
         <div class="card shadow p-3">
-            <h3 class="mb-4 text-center">Constructor de Cuñados</h3>
+            <h3 class="mb-4 text-center">Constructor de Cuñados 2</h3>
 
             <form action="" method="post">
 
