@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+if (!isset($_SESSION['historial'])) {
+    $_SESSION['historial'] = [];
+}
+
 $color = "";
 if (isset($_GET['generar'])) {
     $r = rand(0, 255);
@@ -6,6 +13,18 @@ if (isset($_GET['generar'])) {
     $b = rand(0, 255);
 
     $color = "rgb($r, $g, $b)";
+
+    // Guardar este color en el historial
+    $_SESSION['historial'][] = $color;
+
+    if (count($_SESSION['historial']) > 5) {
+        array_shift($_SESSION['historial']); // elimina el primer elemento
+    }
+}
+
+// Reiniciar historial
+if (isset($_GET['reiniciar'])) {
+    $_SESSION['historial'] = [];
 }
 ?>
 
@@ -30,6 +49,10 @@ if (isset($_GET['generar'])) {
             <button class="btn btn-primary btn-lg mb-4" type="submit" name="generar">
                 Generar Color
             </button>
+
+            <button class="btn btn-danger btn-lg mb-4" name="reiniciar" type="submit">
+                Reiniciar Historial
+            </button>
         </form>
 
         <!-- Mostrar color -->
@@ -40,7 +63,21 @@ if (isset($_GET['generar'])) {
             <p class="text-secondary">Pulsa el botón para generar un color aleatorio</p>
         <?php endif; ?>
     </div>
-    
+
+    <div class="text-center">
+        <h2 class="mt-5">Historial de Colores Generados:</h2>
+        <?php
+        // Si hay colores en la sesión, los mostramos            
+        if (!empty($_SESSION['historial'])) {
+            foreach (array_reverse($_SESSION['historial']) as $valor) {
+                echo "<div class='d-inline-block m-2' style='width:50px; height:50px; background-color: $valor;' title='$valor'></div>";
+            }
+        } else {
+            // Si todavía no hay colores generados
+            echo "<p class='text-secondary'>Aún no has generado ningún color.</p>";
+        }
+        ?>
+    </div>
 </body>
 
 </html>
