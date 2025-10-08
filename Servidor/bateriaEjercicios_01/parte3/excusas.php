@@ -54,11 +54,11 @@ if (isset($_POST['sujeto']) && isset($_POST['accion']) && isset($_POST['cierre']
                 <div class="col-md-4">
                     <label for="accion" class="form-label">Acción</label>
                     <select name="accion" id="accion" class="form-select">
-                        <option value="se comió">se comió</option>
-                        <option value="perdió">perdió</option>
-                        <option value="rompió">rompió</option>
-                        <option value="olvidó">olvidó</option>
-                        <option value="borró">borró</option>
+                        <option value=" se comió ">se comió</option>
+                        <option value=" perdió ">perdió</option>
+                        <option value=" rompió ">rompió</option>
+                        <option value=" olvidó ">olvidó</option>
+                        <option value=" borró ">borró</option>
                     </select>
                 </div>
 
