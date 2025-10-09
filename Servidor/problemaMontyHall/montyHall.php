@@ -1,12 +1,15 @@
 <?php
 
+// Mostrar errores para depuración
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Iniciar sesión
 session_start();
 
 // Reiniciar juego
 if (isset($_GET['reset'])) {
+
     // Guardamos las estadísticas antes de reiniciar
     $statsGuardadas = $_SESSION['stats'] ?? null;
 
@@ -22,24 +25,31 @@ if (isset($_GET['reset'])) {
         $_SESSION['stats'] = $statsGuardadas;
     }
 
+    // Redirige al mismo php con el PHP_SELF, es lo mismo que usar header("Location: montyHall.php");
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
 // Reiniciar estadísticas
 if (isset($_GET['reset_stats'])) {
+
+    // Reiniciamos solo las estadísticas
     $_SESSION['stats'] = [
         'mantener_ganadas' => 0,
         'cambiar_ganadas' => 0,
         'mantener_jugadas' => 0,
         'cambiar_jugadas' => 0
     ];
+
+    // Redirige al mismo php con el PHP_SELF, es lo mismo que usar header("Location: montyHall.php");
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
 // Inicializar juego (si no existe)
 if (!isset($_SESSION['puertas'])) {
+
+    // Creamos puertas y asignamos premio
     $_SESSION['puertas'] = [0, 0, 0];
     $puertaPremio = rand(0, 2);
     $_SESSION['puertas'][$puertaPremio] = 1;
@@ -59,10 +69,13 @@ if (!isset($_SESSION['stats'])) {
 // Función para elegir una puerta inicial
 function elegirPuerta($puertaElegida)
 {
+    // Restamos uno porque el usuario elige entre 1-3 y nosotros usamos 0-2
     $puertaElegida--;
     $_SESSION['puertaElegida'] = $puertaElegida;
 
     $puertasPosibles = [];
+
+    // Recorrer puertas para encontrar una vacía que no sea la elegida
     foreach ([0, 1, 2] as $puerta) {
         if ($puerta != $puertaElegida && $_SESSION['puertas'][$puerta] == 0) {
             $puertasPosibles[] = $puerta;
@@ -76,6 +89,7 @@ function elegirPuerta($puertaElegida)
 // Función para cambiar de puerta
 function cambiarPuerta()
 {
+    // Cambiar a la otra puerta que no sea la elegida ni la abierta
     foreach ([0, 1, 2] as $puerta) {
         if ($puerta != $_SESSION['puertaElegida'] && $puerta != $_SESSION['puertaAbierta']) {
             $_SESSION['puertaElegida'] = $puerta;
@@ -88,9 +102,12 @@ function cambiarPuerta()
 function mostrarEstadisticas()
 {
     $s = $_SESSION['stats'];
+
+    // Calculamos porcentajes
     $porcMantener = $s['mantener_jugadas'] > 0 ? round(($s['mantener_ganadas'] / $s['mantener_jugadas']) * 100, 2) : 0;
     $porcCambiar = $s['cambiar_jugadas'] > 0 ? round(($s['cambiar_ganadas'] / $s['cambiar_jugadas']) * 100, 2) : 0;
 
+    // Mostrar estadísticas con Bootstrap y HTML
     echo "
     <div class='card mt-4'>
         <div class='card-body'>
@@ -112,15 +129,22 @@ if (isset($_GET['accion'])) {
     $cambio = ($_GET['accion'] == 'cambiar');
 
     if ($cambio) {
+
+        // Si decide cambiar, cambiamos la puerta
         cambiarPuerta();
         $_SESSION['stats']['cambiar_jugadas']++;
     } else {
+
+        // Mantener la puerta elegida
         $_SESSION['stats']['mantener_jugadas']++;
     }
 
+    // Comprobar si ha ganado
     $gana = ($_SESSION['puertas'][$_SESSION['puertaElegida']] == 1);
 
     if ($gana) {
+
+        // Actualizar estadísticas según si cambió o no
         if ($cambio) $_SESSION['stats']['cambiar_ganadas']++;
         else $_SESSION['stats']['mantener_ganadas']++;
         $_SESSION['resultado'] = "🎉 ¡Ganaste el coche!";
