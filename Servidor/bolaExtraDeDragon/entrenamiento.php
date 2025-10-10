@@ -44,10 +44,15 @@ function entrenar($nivel, $tipo, $dia, $mejorasEspeciales, &$kaioKenActivado, &$
             break;
     }
 
-    // Mensaje IT´S OVER 9000
+    // Mensaje IT´S OVER 9000 con imagen
     if (!$itOver9000 && $nivel > 9000) {
         $itOver9000 = true;
-        $mensajes .= "<h1 class='text-warning display-3 fw-bold text-center' style='text-shadow:2px 2px black;'>IT'S OVER 9000!!!!</h1>";
+        $mensajes .= "
+        <div class='alert alert-warning text-center w-50 mx-auto fw-bold'>
+            <img src='img/itsOver9000.png' alt='Vegeta' class='img-fluid mb-3'>
+            <h1 class='display-3' style='color: red; text-shadow: 3px 3px 5px black;'>IT'S OVER 9000!!!!</h1>
+        </div>
+    ";
     }
 
     // Mostrar estado
