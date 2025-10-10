@@ -1,5 +1,4 @@
 <?php
-
 // Variables iniciales
 $nivelGoku = isset($_GET['nivelGoku']) ? (int)$_GET['nivelGoku'] : 1000;
 $diasEntrenamiento = isset($_GET['diasEntrenamiento']) ? (int)$_GET['diasEntrenamiento'] : 1;
@@ -16,14 +15,17 @@ $mejorasEspeciales = rand(0, 1) ? "par" : "impar";
 $kaioKenActivado = false;
 $itOver9000 = false;
 
+// Variable para acumular mensajes
+$mensajes = "";
+
 // Función de entrenamiento
-function entrenar($nivel, $tipo, $dia, $mejorasEspeciales, &$kaioKenActivado, &$itOver9000)
+function entrenar($nivel, $tipo, $dia, $mejorasEspeciales, &$kaioKenActivado, &$itOver9000, &$mensajes)
 {
-    // KAIO KEN
+    // Aplicar mejora especial si toca
     if (($mejorasEspeciales === "par" && $dia % 2 == 0) || ($mejorasEspeciales === "impar" && $dia % 2 != 0)) {
         $nivel *= 1.5;
         $kaioKenActivado = true;
-        echo "<div class='alert alert-danger text-center w-75 mx-auto'>🔥 KAIO KEN x1.5 ACTIVADO!! 🔥</div>";
+        $mensajes .= "<div class='alert alert-danger fw-bold text-center w-50 mx-auto'>KAIO KEN x1.5 ACTIVADO!!</div>";
     }
 
     // Aumentar según tipo
@@ -42,15 +44,15 @@ function entrenar($nivel, $tipo, $dia, $mejorasEspeciales, &$kaioKenActivado, &$
             break;
     }
 
-    // IT'S OVER 9000
+    // Mensaje IT´S OVER 9000
     if (!$itOver9000 && $nivel > 9000) {
         $itOver9000 = true;
-        echo "<div class='alert alert-warning text-center w-75 mx-auto fw-bold fs-3'>IT'S OVER 9000!!!!</div>";
+        $mensajes .= "<h1 class='text-warning display-3 fw-bold text-center' style='text-shadow:2px 2px black;'>IT'S OVER 9000!!!!</h1>";
     }
 
-    // Mensaje del día
+    // Mostrar estado
     $tipoSafe = htmlspecialchars($tipo, ENT_QUOTES, 'UTF-8');
-    echo "<div class='alert alert-primary text-center w-75 mx-auto'>Día $dia: Goku ha entrenado con $tipoSafe y ha alcanzado el nivel $nivel.</div>";
+    $mensajes .= "<div class='alert alert-info text-center w-50 mx-auto'>Día $dia: Goku ha entrenado con $tipoSafe y ha alcanzado el nivel $nivel.</div>";
 
     return $nivel;
 }
@@ -60,21 +62,20 @@ if (isset($_GET['simulate']) && $_GET['simulate'] === "yes") {
     $diasEntrenamiento = rand(1, 10);
     for ($i = 1; $i <= $diasEntrenamiento; $i++) {
         $tipo = $entrenamientos[array_rand($entrenamientos)];
-        $nivelGoku = entrenar($nivelGoku, $tipo, $i, $mejorasEspeciales, $kaioKenActivado, $itOver9000);
+        $nivelGoku = entrenar($nivelGoku, $tipo, $i, $mejorasEspeciales, $kaioKenActivado, $itOver9000, $mensajes);
     }
-} else {
-    if (isset($_GET['entrenamiento'])) {
-        $tipo = in_array($_GET['entrenamiento'], $entrenamientos) ? $_GET['entrenamiento'] : $entrenamientos[0];
-        $nivelGoku = entrenar($nivelGoku, $tipo, $diasEntrenamiento, $mejorasEspeciales, $kaioKenActivado, $itOver9000);
-    }
+} elseif (isset($_GET['entrenamiento'])) {
+    // Entrenamiento manual
+    $tipo = in_array($_GET['entrenamiento'], $entrenamientos) ? $_GET['entrenamiento'] : $entrenamientos[0];
+    $nivelGoku = entrenar($nivelGoku, $tipo, $diasEntrenamiento, $mejorasEspeciales, $kaioKenActivado, $itOver9000, $mensajes);
 }
 
 // Mensaje final
-$mensajeFinal = $nivelGoku >= 100000 ?
-    "<div class='alert alert-warning text-center w-75 mx-auto fw-bold'>💥 ¡Goku ha alcanzado el Ultra Instinto! 💥</div>" :
-    "<div class='alert alert-danger text-center w-75 mx-auto fw-bold'>Goku necesita más entrenamiento...</div>";
-echo $mensajeFinal;
-
+if ($nivelGoku >= 100000) {
+    $mensajes .= "<div class='alert alert-warning text-center w-50 mx-auto fw-bold'>💥 ¡Goku ha alcanzado el Ultra Instinto! 💥</div>";
+} else {
+    $mensajes .= "<div class='alert alert-danger text-center w-50 mx-auto fw-bold'>Goku necesita más entrenamiento...</div>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,55 +85,54 @@ echo $mensajeFinal;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrenamiento Son Goku</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 
-<body class="bg-dark text-light">
+<body class="bg-light">
     <div class="container py-5">
-        <h1 class="text-center mb-5 text-warning">Entrenamiento de Goku</h1>
-        <div class="row justify-content-center">
+        <h1 class="text-center mb-4 fw-bold">Entrenamiento de Goku</h1>
+
+        <!-- Mensajes dinámicos -->
+        <div class="text-center mb-4">
+            <?php echo $mensajes; ?>
+        </div>
+
+        <div class="row justify-content-center mt-4">
             <div class="col-md-6">
 
                 <!-- Formulario manual -->
-                <div class="card bg-secondary text-light shadow mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-4">Entrenar Manualmente</h5>
-                        <form method="GET">
-                            <div class="mb-3">
-                                <label class="form-label">Nivel de Goku:</label>
-                                <input type="number" class="form-control" name="nivelGoku" value="<?php echo htmlspecialchars($nivelGoku); ?>">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Días de entrenamiento:</label>
-                                <input type="number" class="form-control" name="diasEntrenamiento" value="<?php echo htmlspecialchars($diasEntrenamiento); ?>" min="1" max="10">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Tipo de entrenamiento:</label>
-                                <select name="entrenamiento" class="form-select">
-                                    <?php foreach ($entrenamientos as $ent) {
-                                        $entSafe = htmlspecialchars($ent);
-                                        echo "<option value='$entSafe'>$entSafe</option>";
-                                    } ?>
-                                </select>
-                            </div>
-
-                            <button type="submit" class="btn btn-warning w-100 fw-bold">Entrenar</button>
-                        </form>
+                <form method="GET" class="mb-3 p-4 border rounded bg-white shadow-sm">
+                    <div class="mb-3">
+                        <label class="form-label">Nivel de Goku:</label>
+                        <input type="number" class="form-control" name="nivelGoku"
+                            value="<?php echo htmlspecialchars($nivelGoku); ?>">
                     </div>
-                </div>
 
-                <!-- Simulación -->
-                <div class="card bg-secondary text-light shadow">
-                    <div class="card-body text-center">
-                        <h5 class="card-title mb-3">Simulación Automática</h5>
-                        <form method="GET">
-                            <input type="hidden" name="simulate" value="yes">
-                            <button type="submit" class="btn btn-danger w-100 fw-bold">Simular entrenamiento</button>
-                        </form>
+                    <div class="mb-3">
+                        <label class="form-label">Días de entrenamiento:</label>
+                        <input type="number" class="form-control" name="diasEntrenamiento"
+                            value="<?php echo htmlspecialchars($diasEntrenamiento); ?>" min="1" max="10">
                     </div>
-                </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tipo de entrenamiento:</label>
+                        <select name="entrenamiento" class="form-select">
+                            <?php foreach ($entrenamientos as $ent) {
+                                $entSafe = htmlspecialchars($ent);
+                                echo "<option value='$entSafe'>$entSafe</option>";
+                            } ?>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Entrenar</button>
+                </form>
+
+                <!-- Botón de simulación -->
+                <form method="GET">
+                    <input type="hidden" name="simulate" value="yes">
+                    <button type="submit" class="btn btn-danger w-100">Simular entrenamiento</button>
+                </form>
 
             </div>
         </div>
