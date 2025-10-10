@@ -7,41 +7,41 @@ $cierre = "";
 
 // Arrays para aleatorio
 $sujetos = [
-    "Yo en tu lugar", 
-    "La verdad es que", 
-    "Tú sabes que", 
-    "No hay duda de que", 
+    "Yo en tu lugar",
+    "La verdad es que",
+    "Tú sabes que",
+    "No hay duda de que",
     "Al final",
-    "Está claro que", 
-    "Como siempre digo", 
-    "No podemos olvidar que", 
-    "Sin duda", 
+    "Está claro que",
+    "Como siempre digo",
+    "No podemos olvidar que",
+    "Sin duda",
     "Debes recordar que"
 ];
 
 $acciones = [
-    "siempre hay que invertir en", 
-    "lo importante es", 
-    "nunca subestimes", 
-    "yo siempre digo que", 
+    "siempre hay que invertir en",
+    "lo importante es",
+    "nunca subestimes",
+    "yo siempre digo que",
     "el secreto está en",
-    "conviene prestar atención a", 
-    "hay que cuidar", 
-    "siempre se debe valorar", 
-    "es fundamental entender", 
+    "conviene prestar atención a",
+    "hay que cuidar",
+    "siempre se debe valorar",
+    "es fundamental entender",
     "no olvides analizar"
 ];
 
 $cierres = [
-    "la bolsa de valores", 
-    "el no tener dinero congelado en el banco", 
-    "los chemtrails", 
-    "la nube", 
+    "la bolsa de valores",
+    "el no tener dinero congelado en el banco",
+    "los chemtrails",
+    "la nube",
     "las criptocoins",
-    "los intereses compuestos", 
-    "el mercado inmobiliario", 
-    "la energía solar", 
-    "las inversiones alternativas", 
+    "los intereses compuestos",
+    "el mercado inmobiliario",
+    "la energía solar",
+    "las inversiones alternativas",
     "el ahorro inteligente"
 ];
 
@@ -63,7 +63,6 @@ if (isset($_POST['submit'])) {
     if ($cierre_custom !== "") $cierre = $cierre_custom;
 
     $frase = $sujeto . " " . $accion . " " . $cierre . ".";
-
 }
 
 // Si se pulsa generar aleatoria
@@ -73,7 +72,6 @@ if (isset($_POST['random'])) {
     $cierre = $cierres[array_rand($cierres)];
 
     $frase = $sujeto . " " . $accion . " " . $cierre . ".";
-
 }
 ?>
 
