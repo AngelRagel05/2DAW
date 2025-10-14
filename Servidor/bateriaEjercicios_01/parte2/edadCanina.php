@@ -27,7 +27,7 @@ if (isset($_GET['calcular'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Edad Canina</title>
     <link rel="icon" href="img/perro.png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">

@@ -36,7 +36,7 @@ if (isset($_GET['reiniciar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Colores Aleatorios</title>
     <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
 </head>
 
 <body class="bg-light d-flex flex-column align-items-center justify-content-center vh-100">
