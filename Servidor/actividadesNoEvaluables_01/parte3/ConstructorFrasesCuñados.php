@@ -21,7 +21,7 @@ if (isset($_POST['sujeto']) && isset($_POST['accion']) && isset($_POST['cierre']
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frases Cuñados</title>
     <link rel="icon" href="img/cuñado.png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
 </head>
 
 <body class="bg-light">

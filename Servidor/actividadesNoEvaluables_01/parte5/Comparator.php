@@ -36,7 +36,7 @@ if ($operacion !== null) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora / Comparador</title>
     <link rel="icon" href="img/calculadora.png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
 </head>
 
 <body class="bg-light">

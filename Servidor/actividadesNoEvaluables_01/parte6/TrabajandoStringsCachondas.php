@@ -29,7 +29,7 @@ for ($i = 0; $i < count($arrayFrase); $i++) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String Cachondas</title>
     <link rel="icon" href="img/frio.png">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
 </head>
 
 <?php
