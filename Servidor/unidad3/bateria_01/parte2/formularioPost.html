@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Get</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.css" />
+  </head>
+  <body>
+    <h2>Formulario con método GET</h2>
+    <form action="procesarPost.php" method="post">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" required /><br /><br />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" name="email" id="email" required /><br /><br />
+
+      <label for="telefono">Número de teléfono:</label>
+      <input type="tel" name="telefono" id="telefono" required /><br /><br />
+
+      <input type="submit" value="Enviar con Post">
+    </form>
+  </body>
+</html>
