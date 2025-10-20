@@ -1,23 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Biomimética</title>
-    <link rel="icon" href="assets/img/logo.png" />
-  </head>
-  <body>
-    <header>
+    <title>Arte Raíz</title>
 
+    <link rel="icon" href="assets/img/logo.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/general.css" />
+
+    <!-- Font Awesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header text-center py-5">
+      <h1 class="site-title">Arte Raíz</h1>
+      <nav class="nav justify-content-center mt-3">
+        <a href="#" class="nav-link text-dark">Inicio</a>
+        <a href="#" class="nav-link text-dark">Galería</a>
+        <a href="#" class="nav-link text-dark">Contacto</a>
+      </nav>
     </header>
 
-    <main>
-
+    <main class="main py-5">
+      <div class="container text-center">
+        <h2 class="section-title">Nuestras raíces</h2>
+        <p class="lead">Explora el arte que crece desde lo más profundo.</p>
+        <!-- Aquí puedes poner tus secciones con raíces animadas -->
+      </div>
     </main>
 
-    <footer>
-        <p></p>
-    </footer>
+    <footer
+      class="footer container-fluid d-flex justify-content-between align-items-center px-5 py-4 position-relative"
+    >
+      <p class="footer-text mb-0">
+        © 2025 Arte Raíz | Creciendo desde lo más profundo 🌋
+      </p>
 
+      <!-- Redes sociales a la derecha -->
+      <div class="footer-socials d-flex gap-3">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="text-light fs-4 social-link"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="text-light fs-4 social-link"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a
+          href="https://github.com"
+          target="_blank"
+          class="text-light fs-4 social-link"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+
+      <!-- Burbujas animadas -->
+      <div class="lava-bubbles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
   </body>
 </html>
