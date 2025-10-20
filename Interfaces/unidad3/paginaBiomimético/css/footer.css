@@ -1,32 +1,41 @@
+/* ========== FOOTER GENERAL ========== */
 .footer {
-  background-color: #3a070c; /* lava oscura */
+  background-color: #3a070c; /* Lava oscura */
   color: #fff;
   font-family: 'Josefin Slab', serif;
   text-shadow: 0 0 8px rgba(255, 100, 0, 0.6);
   overflow: hidden;
   position: relative;
+  padding: 2rem 0;
 }
 
-/* --- contenedor centrado --- */
+/* ===== Contenido centrado ===== */
 .footer-container {
-  max-width: 1000px; /* controla lo centrado del contenido */
-  margin: 0 auto; /* centra el bloque */
-  padding: 0 20px; /* separa un poco los lados */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 1; /* encima de las burbujas */
+  z-index: 1;
 }
 
-/* Texto */
+/* ===== Texto ===== */
 .footer-text {
   margin: 0;
   font-size: 1rem;
 }
 
-/* Redes sociales */
+/* ===== Redes sociales ===== */
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .footer-socials a {
+  color: #fff;
+  font-size: 1.6rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -35,7 +44,7 @@
   color: #ffc700; /* Amarillo sol */
 }
 
-/* ----- BURBUJAS LAVA ----- */
+/* ===== Burbujas de lava ===== */
 .lava-bubbles {
   position: absolute;
   left: 0;
@@ -68,15 +77,41 @@
   100% { transform: translateY(-140px) scale(1.3); opacity: 0; }
 }
 
-/* ----- RESPONSIVE ----- */
+/* ===== RESPONSIVE ===== */
+
+/* --- Tablets (<=992px) --- */
+@media (max-width: 992px) {
+  .footer-container {
+    max-width: 90%;
+    padding: 0 15px;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+  }
+
+  .footer-socials a {
+    font-size: 1.4rem;
+  }
+}
+
+/* --- Móviles (<=768px) --- */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
+    gap: 1rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
   }
 
   .footer-socials {
     justify-content: center;
+  }
+
+  .footer-socials a {
+    font-size: 1.5rem;
   }
 }
