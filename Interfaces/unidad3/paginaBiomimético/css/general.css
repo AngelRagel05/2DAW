@@ -1,0 +1,50 @@
+/* Fuentes globales */
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  color: #fefefe;
+  background: #f7f3ef; /* color neutro general */
+}
+
+/* Main - sección de tierra y raíces */
+.main {
+  background-color: #705a43; /* tierra sólida */
+  position: relative;
+  padding: 60px 0;
+}
+
+/* Nodo raíz principal / secundario */
+.root-node {
+  position: relative;
+  background: rgba(88,123,46,0.2); /* verde tierra tenue */
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 600px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.root-node::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  width: 4px;
+  height: 30px;
+  background: #5e4636; /* raíz */
+  transform: translateX(-50%);
+}
+
+.root-node:hover {
+  transform: translateY(-5px);
+}
+
+/* Titulos y párrafos */
+h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+}
