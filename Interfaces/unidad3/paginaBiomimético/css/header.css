@@ -1,28 +1,150 @@
-/* Header general */
+/* ========== HEADER GENERAL ========== */
 .header {
+  background-color: #4fd2e2;
+  /* Azul cielo */
+  color: #fff;
+  font-family: 'Irish Grover', cursive;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  flex-wrap: wrap;
+}
+
+/* ===== Logo y título ===== */
+.logo {
+  width: 90px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.site-title a {
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background-color: #b5e8f7; /* cielo sólido */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  font-family: 'Irish Grover', cursive;
-}
-
-/* Logo */
-.header .logo img {
-  height: 50px;
-}
-
-/* Navegación */
-.header .nav-link {
-  margin-left: 20px;
-  font-weight: 600;
-  color: #291a17;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: transform 0.3s;
 }
 
-.header .nav-link:hover {
-  color: #4fd2e2;
+.site-title a:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Navegación ===== */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* ===== Enlaces de menú con nubes ===== */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #291a17;
+  /* Marrón tierra */
+  font-family: 'Josefin Slab', serif;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Imagen de nube */
+.nube-img {
+  display: block;
+  width: 180px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Texto encima de la nube */
+.nube-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+/* Hover flotante */
+.nav-link:hover .nube-img {
+  transform: translateY(-6px);
+  filter: brightness(1.1) drop-shadow(0 5px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* --- Tablets (<=992px) --- */
+@media (max-width: 992px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .site-title a {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 75px;
+  }
+
+  .nav-list {
+    gap: 1.2rem;
+  }
+
+  .nube-img {
+    width: 150px;
+  }
+
+  .nube-text {
+    font-size: 1rem;
+  }
+}
+
+/* --- Móviles (<=768px) --- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .site-title a {
+    justify-content: center;
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    width: 65px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nube-img {
+    width: 140px;
+  }
+
+  .nube-text {
+    font-size: 0.95rem;
+  }
 }
