@@ -1,4 +1,4 @@
-# 🌐 Ejercicios de Cliente y Servidor
+# 🌐 Ejercicios de Cliente, Servidor e Interfaces
 
 Este repositorio es un **espacio de aprendizaje y práctica** donde realizo ejercicios de **desarrollo web**, tanto del lado del **cliente (JavaScript)** como del **servidor (PHP)**.  
 La idea es reforzar conceptos fundamentales y avanzar poco a poco en el manejo de ambas partes del desarrollo full stack.
@@ -15,6 +15,16 @@ Incluye temas como:
 - Uso de **funciones**, **arrays** y **objetos**
 - Trabajo con **promesas** y **Fetch API**
 - Prácticas de **interactividad** y **asincronía**
+
+### 🎨 Diseño de Interfaces (HTML, CSS y JavaScript)
+En esta sección se desarrollan **interfaces visuales y layouts** de distintas páginas web, poniendo en práctica los principios del **diseño frontend**.  
+Se trabaja con tecnologías fundamentales del cliente para construir interfaces funcionales, atractivas y adaptables.  
+Algunos aspectos que se practican:
+- **Estructuración** del contenido con **HTML5**
+- **Estilos y maquetación** con **CSS3** (Flexbox, Grid, animaciones, media queries)
+- **Interactividad** mediante **JavaScript**
+- Creación de **componentes reutilizables** y **efectos dinámicos**
+- Inspiración en **páginas reales** para practicar diferentes tipos de diseño
 
 ### ⚙️ Servidor (PHP)
 Aquí se encuentran ejercicios relacionados con el procesamiento del lado del servidor.  
@@ -56,4 +66,4 @@ Para ejecutar los ejercicios necesitas:
 ### Ejercicios de Servidor
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/AngelRagel05/Cliente-Servidor.git
+   git clone https://github.com/AngelRagel05/2DAW.git
