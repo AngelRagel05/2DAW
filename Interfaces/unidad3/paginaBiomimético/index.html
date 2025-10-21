@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- JS -->
+     <script src="js/main.js"></script>
 
     <!-- Font Awesome para íconos -->
     <link
@@ -81,11 +85,52 @@
       </nav>
     </header>
 
-    <main class="main py-5">
-      <div class="container text-center">
-        <h2 class="section-title">Nuestras raíces</h2>
-        <p class="lead">Explora el arte que crece desde lo más profundo.</p>
-        <!-- Aquí puedes poner tus secciones con raíces animadas -->
+    <main class="main-section">
+      <!-- Botón central -->
+      <div class="center-root">
+        <button id="arteBtn" class="btn-arte">Arte</button>
+      </div>
+
+      <!-- SVG Raíces -->
+      <svg
+        id="rootsSVG"
+        class="roots-svg"
+        viewBox="0 0 800 600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          id="root1"
+          class="root-path"
+          d="M400,150 C400,200 300,300 250,400"
+        />
+        <path
+          id="root2"
+          class="root-path"
+          d="M400,150 C400,200 400,320 400,420"
+        />
+        <path
+          id="root3"
+          class="root-path"
+          d="M400,150 C400,200 500,300 550,400"
+        />
+      </svg>
+
+      <!-- Secciones de arte -->
+      <div class="sections">
+        <div id="pintura" class="art-section hidden">
+          <h2>🎨 Pintura</h2>
+          <p>Explora las formas, colores y emociones del arte visual.</p>
+        </div>
+
+        <div id="musica" class="art-section hidden">
+          <h2>🎵 Música</h2>
+          <p>Descubre la armonía entre ritmo, melodía y expresión.</p>
+        </div>
+
+        <div id="literatura" class="art-section hidden">
+          <h2>📖 Literatura</h2>
+          <p>Sumérgete en las raíces de la palabra y la imaginación.</p>
+        </div>
       </div>
     </main>
 
