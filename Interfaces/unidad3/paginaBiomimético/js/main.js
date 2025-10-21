@@ -7,13 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     arteBtn.disabled = true;
 
     roots.forEach((root, i) => {
+      root.classList.add("root-animated");
       root.style.transition = `stroke-dashoffset 2.5s ease ${i * 0.3}s`;
       root.style.strokeDashoffset = "0";
 
-      // Cuando la raíz termine, mostrar la sección correspondiente
       setTimeout(() => {
+        root.classList.remove("root-animated");
         sections[i].classList.add("visible");
-      }, 2500 + i * 300);
+      }, 1500 + i * 250);
     });
   });
 });

@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" />
 
     <!-- JS -->
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Font Awesome para íconos -->
     <link
@@ -85,53 +85,52 @@
       </nav>
     </header>
 
-    <main class="main-section">
-      <!-- Botón central -->
-      <div class="center-root">
-        <button id="arteBtn" class="btn-arte">Arte</button>
-      </div>
+    <main class="main-content text-center">
+      <button id="arteBtn" class="btn btn-main">Arte</button>
 
-      <!-- SVG Raíces -->
+      <!-- SVG de raíces ajustadas -->
       <svg
-        id="rootsSVG"
-        class="roots-svg"
-        viewBox="0 0 800 600"
+        id="rootsSvg"
+        viewBox="0 0 800 400"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <!-- Raíz 1 (izquierda) -->
         <path
-          id="root1"
-          class="root-path"
-          d="M400,150 C400,200 300,300 250,400"
-        />
+          class="root-path root-1"
+          d="M400,10 C300,170 180,250 120,420"
+        ></path>
+        <!-- Raíz 2 (centro) -->
         <path
-          id="root2"
-          class="root-path"
-          d="M400,150 C400,200 400,320 400,420"
-        />
+          class="root-path root-2"
+          d="M400,10 C400,180 400,260 400,420"
+        ></path>
+        <!-- Raíz 3 (derecha) -->
         <path
-          id="root3"
-          class="root-path"
-          d="M400,150 C400,200 500,300 550,400"
-        />
+          class="root-path root-3"
+          d="M400,10 C500,170 620,250 680,420"
+        ></path>
       </svg>
 
       <!-- Secciones de arte -->
-      <div class="sections">
-        <div id="pintura" class="art-section hidden">
-          <h2>🎨 Pintura</h2>
-          <p>Explora las formas, colores y emociones del arte visual.</p>
+      <section class="art-sections">
+        <div class="art-section" id="pintura">
+          <h2>Pintura</h2>
+          <p>Explora el color, la forma y la emoción plasmada en lienzo.</p>
+          <a href="pintura.html" class="btn btn-art">Ver más</a>
         </div>
 
-        <div id="musica" class="art-section hidden">
-          <h2>🎵 Música</h2>
-          <p>Descubre la armonía entre ritmo, melodía y expresión.</p>
+        <div class="art-section" id="musica">
+          <h2>Música</h2>
+          <p>Descubre el arte del sonido, el ritmo y la melodía.</p>
+          <a href="musica.html" class="btn btn-art">Ver más</a>
         </div>
 
-        <div id="literatura" class="art-section hidden">
-          <h2>📖 Literatura</h2>
-          <p>Sumérgete en las raíces de la palabra y la imaginación.</p>
+        <div class="art-section" id="literatura">
+          <h2>Literatura</h2>
+          <p>Sumérgete en el poder de las palabras y las historias.</p>
+          <a href="literatura.html" class="btn btn-art">Ver más</a>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="footer position-relative py-4">
