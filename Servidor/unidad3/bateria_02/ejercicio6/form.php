@@ -11,17 +11,28 @@ if (!empty($_GET['centro'])) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Centro</title>
+    <link href="../../../css/bootstrap.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Formulario de Centro</h1>
-    <form method="get" action="">
-        <label for="centro">Introduce el centro:</label>
-        <input type="text" name="centro" id="centro" required>
-        <button type="submit">Enviar</button>
-    </form>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow-sm p-4">
+            <h1 class="text-primary text-center mb-4">Formulario de Centro</h1>
+
+            <form method="get" action="" class="mx-auto" style="max-width: 400px;">
+                <div class="mb-3">
+                    <label for="centro" class="form-label">Introduce el centro:</label>
+                    <input type="text" name="centro" id="centro" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
