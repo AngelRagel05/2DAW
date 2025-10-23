@@ -39,6 +39,20 @@
 }
 
 /* ================================
+   ✨ Descripción bajo el botón "Arte"
+=================================== */
+.arte-desc {
+  font-size: 1.1rem;
+  color: #fff;
+  font-family: 'Josefin Slab', serif;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 600px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* ================================
    🌳 SVG RAÍCES
 =================================== */
 #rootsSvg {
