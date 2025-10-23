@@ -1,22 +1,43 @@
-/* Fuentes globales */
-body {
-  font-family: 'Quicksand', sans-serif;
-  margin: 0;
-  color: #fefefe;
-  background: #f7f3ef; /* color neutro general */
+/* ================================
+   🎨 GENERAL.CSS — ESTILOS GLOBALES
+=================================== */
+
+/* 🌈 Paleta de colores */
+:root {
+  --color-earth-dark: #291a17;
+  --color-earth: #5b3a29;
+  --color-earth-light: #705a43;
+  --color-gold: #ffc700;
+  --color-text-light: #fff;
+  --color-bg-neutral: #f7f3ef;
 }
 
-/* Main - sección de tierra y raíces */
+/* ✨ Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌍 Base */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--color-bg-neutral);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* 🪵 Sección general tipo “tierra” */
 .main {
-  background-color: #705a43; /* tierra sólida */
+  background-color: var(--color-earth-light);
   position: relative;
   padding: 60px 0;
 }
 
-/* Nodo raíz principal / secundario */
+/* 🌱 Nodo raíz genérico */
 .root-node {
   position: relative;
-  background: rgba(88,123,46,0.2); /* verde tierra tenue */
+  background: rgba(88, 123, 46, 0.2); /* verde tierra tenue */
   padding: 40px 20px;
   border-radius: 15px;
   margin: 40px auto;
@@ -39,12 +60,20 @@ body {
   transform: translateY(-5px);
 }
 
-/* Titulos y párrafos */
-h2, h3 {
+/* ✍️ Tipografía */
+h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
+  color: var(--color-gold);
 }
 
 p {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
+}
+
+/* 🔘 Botones genéricos */
+button {
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
 }

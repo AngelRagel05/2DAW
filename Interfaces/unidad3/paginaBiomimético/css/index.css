@@ -1,10 +1,11 @@
 /* ================================
-   🌱 MAIN GENERAL
+   🏡 INDEX.CSS — ESTILOS ESPECÍFICOS
 =================================== */
+
+/* 🌳 Contenedor principal */
 .main-content {
-  background-color: #5b3a29;
-  /* Marrón tierra */
-  color: #fff;
+  background-color: var(--color-earth);
+  color: var(--color-text-light);
   font-family: 'Josefin Slab', serif;
   min-height: 100vh;
   display: flex;
@@ -16,34 +17,29 @@
   overflow: hidden;
 }
 
-/* ================================
-   🌿 BOTÓN PRINCIPAL ("Arte")
-=================================== */
+/* 🌿 Botón principal "Arte" */
 .btn-main {
-  background-color: #291a17;
-  color: #ffc700;
-  border: 2px solid #ffc700;
+  background-color: var(--color-earth-dark);
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
   font-size: 1.6rem;
   padding: 0.8rem 2rem;
   border-radius: 50px;
   font-family: 'Irish Grover', cursive;
-  cursor: pointer;
   transition: all 0.3s ease;
   z-index: 2;
 }
 
 .btn-main:hover {
-  background-color: #ffc700;
-  color: #291a17;
+  background-color: var(--color-gold);
+  color: var(--color-earth-dark);
   transform: scale(1.05);
 }
 
-/* ================================
-   ✨ Descripción bajo el botón "Arte"
-=================================== */
+/* ✨ Descripción bajo el botón */
 .arte-desc {
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--color-text-light);
   font-family: 'Josefin Slab', serif;
   text-align: center;
   margin-top: 1rem;
@@ -52,21 +48,17 @@
   opacity: 0.9;
 }
 
-/* ================================
-   🌳 SVG RAÍCES
-=================================== */
+/* 🌾 SVG de raíces */
 #rootsSvg {
   width: 100%;
   max-width: 800px;
   height: 400px;
   margin-top: 1rem;
-  /* subimos un poco las raíces 20px */
   overflow: visible;
 }
 
 .root-path {
   fill: none;
-  stroke: #3b2314;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-dasharray: 1000;
@@ -74,22 +66,12 @@
   transition: stroke-dashoffset 2.5s ease;
 }
 
-/* Tonos de raíz ligeramente distintos */
-.root-1 {
-  stroke: #4b2d17;
-}
+/* Variantes de raíz */
+.root-1 { stroke: #4b2d17; }
+.root-2 { stroke: #3b2314; }
+.root-3 { stroke: #4a2a15; }
 
-.root-2 {
-  stroke: #3b2314;
-}
-
-.root-3 {
-  stroke: #4a2a15;
-}
-
-/* ================================
-   🌾 SECCIONES DE ARTE
-=================================== */
+/* 🎨 Secciones de arte */
 .art-sections {
   display: flex;
   justify-content: space-around;
@@ -103,7 +85,7 @@
 
 .art-section {
   background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid #ffc700;
+  border: 1px solid var(--color-gold);
   border-radius: 20px;
   padding: 1.5rem;
   width: 260px;
@@ -121,86 +103,69 @@
 
 .art-section h2 {
   font-family: 'Irish Grover', cursive;
-  color: #ffc700;
+  color: var(--color-gold);
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
 .art-section p {
   font-size: 1rem;
-  color: #fff;
+  color: var(--color-text-light);
   margin-bottom: 1.2rem;
   line-height: 1.5;
 }
 
-/* ================================
-   🎨 BOTONES DE CADA ARTE
-=================================== */
+/* 🎨 Botones de cada arte */
 .btn-art {
-  background-color: #ffc700;
-  color: #291a17;
-  border: none;
+  background-color: var(--color-gold);
+  color: var(--color-earth-dark);
   padding: 0.5rem 1.2rem;
   border-radius: 25px;
   font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
   font-family: 'Josefin Slab', serif;
 }
 
 .btn-art:hover {
-  background-color: #291a17;
-  color: #ffc700;
+  background-color: var(--color-earth-dark);
+  color: var(--color-gold);
   transform: scale(1.1);
 }
 
-/* ================================
-   📱 RESPONSIVE DESIGN
-=================================== */
-
-/* Tablets */
+/* 📱 Responsive */
 @media (max-width: 992px) {
   #rootsSvg {
     max-width: 600px;
     height: 350px;
   }
-
   .art-sections {
     gap: 1rem;
   }
-
   .art-section {
     width: 220px;
   }
-
   .btn-main {
     font-size: 1.4rem;
     padding: 0.7rem 1.8rem;
   }
 }
 
-/* Móviles */
 @media (max-width: 768px) {
   .main-content {
     padding-top: 3rem;
   }
-
   #rootsSvg {
     max-width: 400px;
     height: 250px;
   }
-
   .art-sections {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
   }
-
   .art-section {
     width: 80%;
   }
-
   .btn-main {
     font-size: 1.2rem;
     padding: 0.6rem 1.5rem;
