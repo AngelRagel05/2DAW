@@ -4,7 +4,6 @@
 .pintura-main {
   background-color: #5b3a29;
   color: #fff;
-  font-family: 'Josefin Slab', serif;
 }
 
 /* ================================
@@ -36,7 +35,6 @@
 }
 
 .hero-content h1 {
-  font-family: 'Irish Grover', cursive;
   color: #ffc700;
   font-size: 2.8rem;
   margin-bottom: 0.5rem;
@@ -71,7 +69,6 @@
 
 .pintura-tipos h2 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 1.5rem;
 }
 
@@ -113,7 +110,6 @@
 
 .pintura-artistas h2 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 1.5rem;
 }
 
@@ -146,7 +142,6 @@
 
 .artista-card h3 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 0.4rem;
 }
 
@@ -163,7 +158,6 @@
 
 .art-navigation h3 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 1rem;
 }
 

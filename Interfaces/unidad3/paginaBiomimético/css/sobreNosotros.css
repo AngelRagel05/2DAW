@@ -8,7 +8,6 @@
   display: flex;
   justify-content: center;
   padding: 5rem 1rem;
-  font-family: 'Quicksand', sans-serif;
 }
 
 .sobreNosotros-section {
@@ -27,7 +26,6 @@
 }
 
 .sobreNosotros-titulo {
-  font-family: 'Irish Grover', cursive;
   color: #4b2d17;
   font-size: 2rem;
   text-align: center;
@@ -35,7 +33,6 @@
 }
 
 .sobreNosotros-descripcion {
-  font-family: 'Josefin Slab', serif;
   font-size: 1.1rem;
   text-align: center;
   color: #5b3a29;
@@ -62,14 +59,12 @@
 }
 
 .sobreNosotros-card h3 {
-  font-family: 'Irish Grover', cursive;
   color: #ffc700;
   font-size: 1.5rem;
   margin-bottom: 0.8rem;
 }
 
 .sobreNosotros-card p {
-  font-family: 'Josefin Slab', serif;
   font-size: 1rem;
   color: #3b2314;
   line-height: 1.5;

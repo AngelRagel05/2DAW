@@ -1,5 +1,5 @@
 /* ================================
-   📬 CONTACTO.CSS — NUEVO ESTILO
+   📬 CONTACTO.CSS
 =================================== */
 
 .contacto-main {
@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
   padding: 5rem 1rem;
-  font-family: 'Quicksand', sans-serif;
 }
 
 .contacto-section {
@@ -28,7 +27,6 @@
 }
 
 .contacto-titulo {
-  font-family: 'Irish Grover', cursive;
   color: #4b2d17; /* tierra profunda */
   font-size: 2rem;
   text-align: center;
@@ -36,7 +34,6 @@
 }
 
 .contacto-descripcion {
-  font-family: 'Josefin Slab', serif;
   font-size: 1.05rem;
   color: #5b3a29;
   text-align: center;
@@ -57,7 +54,7 @@
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  color: #4b2d17;
+  color: #4b2314;
   transition: all 0.3s ease;
   width: 100%;
 }

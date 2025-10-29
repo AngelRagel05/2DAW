@@ -25,7 +25,6 @@
   font-size: 1.6rem;
   padding: 0.8rem 2rem;
   border-radius: 50px;
-  font-family: 'Irish Grover', cursive;
   transition: all 0.3s ease;
   z-index: 2;
 }
@@ -40,7 +39,6 @@
 .arte-desc {
   font-size: 1.1rem;
   color: var(--color-text-light);
-  font-family: 'Josefin Slab', serif;
   text-align: center;
   margin-top: 1rem;
   max-width: 600px;
@@ -102,7 +100,6 @@
 }
 
 .art-section h2 {
-  font-family: 'Irish Grover', cursive;
   color: var(--color-gold);
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
@@ -122,7 +119,6 @@
   padding: 0.5rem 1.2rem;
   border-radius: 25px;
   font-weight: bold;
-  font-family: 'Josefin Slab', serif;
 }
 
 .btn-art:hover {

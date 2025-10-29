@@ -1,7 +1,6 @@
 .musica-main {
   background-color: #5b3a29;
   color: #fff;
-  font-family: 'Josefin Slab', serif;
 }
 
 /* HERO */
@@ -28,7 +27,6 @@
   border-radius: 15px;
 }
 .musica-hero-content h1 {
-  font-family: 'Irish Grover', cursive;
   color: #ffc700;
   font-size: 2.8rem;
   margin-bottom: 0.5rem;
@@ -57,7 +55,6 @@
 }
 .musica-tipos h2 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 1.5rem;
 }
 .musica-cards {
@@ -86,7 +83,6 @@
 }
 .musica-card h3 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 0.4rem;
 }
 
@@ -97,7 +93,6 @@
 }
 .musica-artistas h2 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 1.5rem;
 }
 .musica-artistas-grid {
@@ -125,7 +120,6 @@
 }
 .musica-artista-card h3 {
   color: #ffc700;
-  font-family: 'Irish Grover', cursive;
   margin-bottom: 0.4rem;
 }
 

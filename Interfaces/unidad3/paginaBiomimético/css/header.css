@@ -2,7 +2,6 @@
 .header {
   background-color: #4fd2e2; /* Azul cielo */
   color: #fff;
-  font-family: 'Irish Grover', cursive;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 10;
@@ -55,7 +54,6 @@
   text-align: center;
   text-decoration: none;
   color: #291a17; /* Marrón tierra */
-  font-family: 'Josefin Slab', serif;
   font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
