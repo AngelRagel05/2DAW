@@ -110,39 +110,73 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
+/* Tarjeta individual */
 .artist-card {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid #ffc700;
-  border-radius: 20px;
-  width: 260px;
-  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #ffc700;
+  border-radius: 25px;
+  width: 240px;
+  padding: 1.5rem 1rem;
   text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.artist-card img {
+.artist-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(255, 199, 0, 0.4);
+}
+
+/* Imagen del artista */
+.artist-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffc700;
+  box-shadow: 0 0 10px rgba(255, 199, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover .artist-img {
+  transform: scale(1.05);
+}
+
+.artist-img img {
   width: 100%;
-  border-radius: 15px;
-  height: 160px;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 1rem;
 }
 
+/* Texto */
 .artist-card h3 {
-  color: #ffc700;
   font-family: 'Irish Grover', cursive;
+  color: #ffc700;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
+}
+
+.artist-card p {
+  font-size: 0.95rem;
+  color: #fff;
+  opacity: 0.9;
+  line-height: 1.4;
 }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
-  .art-hero h1 {
-    font-size: 2.2rem;
-  }
-  .type-card,
   .artist-card {
-    width: 90%;
+    width: 80%;
+  }
+
+  .artist-img {
+    width: 100px;
+    height: 100px;
   }
 }
