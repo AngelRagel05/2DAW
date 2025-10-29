@@ -1,0 +1,168 @@
+/* ================================
+   🎵 SECCIÓN PRINCIPAL MÚSICA
+================================ */
+.music-main {
+  background-color: #5b3a29;
+  color: #fff;
+  font-family: 'Josefin Slab', serif;
+  min-height: 100vh;
+}
+
+/* ================================
+   🎼 ENCABEZADO CON FONDO
+================================ */
+.music-hero {
+  background-image: url("img/fondo-musica.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.music-hero .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-hero h1 {
+  font-family: 'Irish Grover', cursive;
+  color: #ffc700;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+/* ================================
+   🎶 DESCRIPCIÓN GENERAL
+================================ */
+.music-info {
+  max-width: 900px;
+  margin: 3rem auto;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* ================================
+   🎧 VERTIENTES / ESTILOS
+================================ */
+.music-styles {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.music-styles h2 {
+  font-family: 'Irish Grover', cursive;
+  color: #ffc700;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.style-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.style-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid #ffc700;
+  border-radius: 20px;
+  width: 260px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.style-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.style-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ================================
+   🌟 ARTISTAS DESTACADOS
+================================ */
+.music-artists {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.music-artists h2 {
+  font-family: 'Irish Grover', cursive;
+  color: #ffc700;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.artist-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #291a17;
+  border: 1px solid #ffc700;
+  border-radius: 20px;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: scale(1.05);
+}
+
+.artist-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.artist-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.artist-info h3 {
+  font-family: 'Irish Grover', cursive;
+  color: #ffc700;
+  margin-bottom: 0.5rem;
+}
+
+.artist-info p {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ================================
+   📱 RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .style-cards, .artist-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .music-hero h1 {
+    font-size: 2.2rem;
+  }
+}
