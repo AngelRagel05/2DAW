@@ -13,7 +13,7 @@
 }
 
 .contacto-section {
-  background-color: #f7f3ef; /* blanco limpio */
+  background-color: #c9c9c9; /* blanco limpio */
   border-radius: 20px;
   padding: 3rem 2.5rem;
   max-width: 650px;
@@ -52,7 +52,7 @@
 }
 
 .contacto-form .form-control {
-  background-color: #fdfaf6;
+  background-color: #ffffff;
   border: 1px solid #d9c6b0;
   border-radius: 12px;
   padding: 0.75rem 1rem;
