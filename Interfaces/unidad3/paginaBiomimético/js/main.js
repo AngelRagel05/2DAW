@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const roots = document.querySelectorAll(".root-path");
   const sections = document.querySelectorAll(".art-section");
 
-  arteBtn.addEventListener("click", () => {
+  // 🔹 Función que ejecuta toda la animación
+  const playAnimation = () => {
     arteBtn.disabled = true;
+    localStorage.setItem("arteClicked", "true"); // guarda el estado
 
     roots.forEach((root, i) => {
       root.classList.add("root-animated");
@@ -16,5 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
         sections[i].classList.add("visible");
       }, 1500 + i * 250);
     });
-  });
+  };
+
+  // 🔹 Evento normal de clic en el botón
+  arteBtn.addEventListener("click", playAnimation);
+
+  // 🔹 Si ya se pulsó antes, reproducimos la animación automáticamente
+  const arteClicked = localStorage.getItem("arteClicked");
+  if (arteClicked === "true") {
+    setTimeout(() => {
+      playAnimation();
+    }, 600); // un pequeño retardo para que cargue el DOM antes
+  }
 });
