@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Animación de raíces
   const arteBtn = document.getElementById("arteBtn");
   const roots = document.querySelectorAll(".root-path");
   const sections = document.querySelectorAll(".art-section");
 
-  // 🔹 Función que ejecuta toda la animación
   const playAnimation = () => {
     arteBtn.disabled = true;
-    localStorage.setItem("arteClicked", "true"); // guarda el estado
+    localStorage.setItem("arteClicked", "true");
 
     roots.forEach((root, i) => {
       root.classList.add("root-animated");
@@ -20,14 +20,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // 🔹 Evento normal de clic en el botón
   arteBtn.addEventListener("click", playAnimation);
 
-  // 🔹 Si ya se pulsó antes, reproducimos la animación automáticamente
   const arteClicked = localStorage.getItem("arteClicked");
   if (arteClicked === "true") {
     setTimeout(() => {
       playAnimation();
-    }, 600); // un pequeño retardo para que cargue el DOM antes
+    }, 600);
   }
+
+  // Menú hamburguesa
+  const menuToggle = document.getElementById("menuToggle");
+  const navList = document.querySelector(".nav-list");
+
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navList.classList.toggle("active");
+
+    // Forzamos display para que sobreescriba Bootstrap
+    if (navList.classList.contains("active")) {
+      navList.style.display = "flex";
+      navList.style.flexDirection = "column";
+      navList.style.alignItems = "center";
+    } else {
+      navList.style.display = "none";
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    const navList = document.querySelector(".nav-list");
+    const menuToggle = document.getElementById("menuToggle");
+
+    if (window.innerWidth > 768) {
+      // En escritorio, quitamos cualquier estilo inline
+      navList.style.display = "";
+      navList.style.flexDirection = "";
+      navList.style.alignItems = "";
+      menuToggle.classList.remove("active");
+      navList.classList.remove("active");
+    }
+  });
 });
