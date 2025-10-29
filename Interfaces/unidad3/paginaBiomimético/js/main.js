@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".art-section");
 
   const playAnimation = () => {
-    arteBtn.disabled = true;
-    localStorage.setItem("arteClicked", "true");
+    if (arteBtn) arteBtn.disabled = true;
+    sessionStorage.setItem("arteClicked", "true");
 
     roots.forEach((root, i) => {
       root.classList.add("root-animated");
@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento del botón
   if (arteBtn) arteBtn.addEventListener("click", playAnimation);
 
-  // Reproducir animación si ya se pulsó antes
-  const arteClicked = localStorage.getItem("arteClicked");
+  // Reproducir animación si ya se pulsó antes durante esta sesión
+  const arteClicked = sessionStorage.getItem("arteClicked");
   if (arteClicked === "true") {
-    setTimeout(playAnimation, 600);
+    setTimeout(playAnimation, 300); // animación automática al volver
   }
 });
