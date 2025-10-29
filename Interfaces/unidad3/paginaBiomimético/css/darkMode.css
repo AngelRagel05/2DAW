@@ -1,0 +1,49 @@
+/* ================================
+   DARK MODE — VERSIÓN OSCURA
+=================================== */
+
+/* Cuerpo y fondo general */
+body.dark-mode {
+  background-color: #1e1e1e; /* fondo general oscuro */
+  color: #e0e0e0; /* texto general claro */
+}
+
+/* Header */
+body.dark-mode .header {
+  background-color: #0f1236; /* header más oscuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Ocultar logo del header */
+body.dark-mode .site-title img.logo {
+  display: none;
+}
+
+body.dark-mode .nav-link {
+  color: #000000; /* texto negro de las nubes */
+}
+
+/* Botón dark mode */
+body.dark-mode #darkModeBtn {
+  border-color: #000000;
+  color: #ffffff;
+  background-color: #0f1236; /* fondo botón oscuro */
+}
+
+/* Tierra / secciones principales */
+body.dark-mode .main-content,
+body.dark-mode .main {
+  background-color: #3f2a14; /* más oscuro que tierra clara */
+}
+
+/* Secciones de arte y nodos raíz */
+body.dark-mode .art-section,
+body.dark-mode .root-node {
+  background-color: rgba(50, 60, 30, 0.2); /* efecto semitransparente más oscuro */
+  border-color: #d4a300; /* borde dorado más apagado */
+}
+
+/* Césped o secciones verdes */
+body.dark-mode .grass {
+  background-color: #0d4d0d; /* verde más oscuro */
+}
