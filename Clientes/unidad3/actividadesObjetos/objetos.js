@@ -90,11 +90,24 @@ for (let clave in myCar) {
 console.log("");
 console.log('6. Symbol y claves ocultas.');
 
+let empleado = {
+    nombre: "Luis",
+    puesto: "Desarrollador",
+    sueldo : 50000
+}
 
+const idEmpleado = Symbol("idEmpleado");
+empleado[idEmpleado] = 2;
+
+for (let clave in empleado) {
+    console.log(clave + ": " + empleado[clave]);
+}
 
 //! ************************************************************************************************************************************** //
 console.log("");
 console.log('7. Conversión de objetos a valores primitivos.');
+
+
 
 //! ************************************************************************************************************************************** //
 console.log("");
