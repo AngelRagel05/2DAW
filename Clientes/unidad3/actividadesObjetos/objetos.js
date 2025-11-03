@@ -199,3 +199,5 @@ miCaja.cambiarCodigo("5678"); // Cambia el código a "5678"
 //! ************************************************************************************************************************************** //
 console.log("");
 console.log("10. Objeto window, DOM y eventos:");
+
+// Está en otro js y otro html ;)
