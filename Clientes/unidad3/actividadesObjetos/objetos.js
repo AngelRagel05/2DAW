@@ -168,6 +168,34 @@ myNewCar.info(); // Muestra las propiedades del objeto
 console.log("");
 console.log("9. Encapsulación con Propiedades Privadas.");
 
+class CajaFuerte {
+    propietario;
+    #codigoSecreto; // Propiedad privada
+
+    constructor(propietario, codigoSecreto) {
+        this.propietario = propietario;
+        this.#codigoSecreto = codigoSecreto;
+    }
+
+    verCodigo() {
+        return this.#codigoSecreto;
+    }
+
+    cambiarCodigo(nuevoCodigo) {
+        if (nuevoCodigo.length == 4) {
+            this.#codigoSecreto = nuevoCodigo;
+            console.log("Código cambiado exitosamente.");
+        } else {
+            console.log("El código debe tener 4 dígitos.");
+        }
+    }
+}
+
+let miCaja = new CajaFuerte("Ángel", "5002");
+miCaja.verCodigo(); // Devuelve "5002"
+miCaja.cambiarCodigo("5678"); // Cambia el código a "5678"
+// console.log(miCaja.#codigoSecreto); // Error: No se puede acceder a la propiedad privada
+
 //! ************************************************************************************************************************************** //
 console.log("");
 console.log("10. Objeto window, DOM y eventos:");
