@@ -80,6 +80,12 @@ function Car(name, model, year) {
     this.year = year;
 }
 
+let myCar = new Car("Ford", "Mustang", 1969);
+
+for (let clave in myCar) {
+    console.log(clave + ": " + myCar[clave]);
+}
+
 //! ************************************************************************************************************************************** //
 console.log("");
 console.log('6. Symbol y claves ocultas.');
