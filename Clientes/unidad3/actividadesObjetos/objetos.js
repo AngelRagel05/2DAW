@@ -74,11 +74,17 @@ for (let clave in usuario1) {
 console.log("");
 console.log('5. Métodos en objetos y uso de "this".');
 
-
+function Car(name, model, year) {
+    this.name = name;
+    this.model = model;
+    this.year = year;
+}
 
 //! ************************************************************************************************************************************** //
 console.log("");
 console.log('6. Symbol y claves ocultas.');
+
+
 
 //! ************************************************************************************************************************************** //
 console.log("");
@@ -90,7 +96,7 @@ console.log('8. Herencia de Clases.');
 
 //! ************************************************************************************************************************************** //
 console.log("");
-console.log('9.Encapsulación con Propiedades Privadas.');
+console.log('9. Encapsulación con Propiedades Privadas.');
 
 //! ************************************************************************************************************************************** //
 console.log("");
