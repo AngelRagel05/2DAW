@@ -107,7 +107,15 @@ for (let clave in empleado) {
 console.log("");
 console.log('7. Conversión de objetos a valores primitivos.');
 
+let cuentaBancaria = {
+    saldo: 1000,
 
+    toString: function() {
+        return `Saldo: ${this.saldo} EUR`;
+    }
+}
+
+console.log(cuentaBancaria.toString()); // Saldo: 1000 EUR
 
 //! ************************************************************************************************************************************** //
 console.log("");
