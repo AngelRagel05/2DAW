@@ -37,7 +37,31 @@ for (let i = 0; i < string.length; i++) {
 console.log("");
 console.log("Ejercicio 2: Funciones definidas por el usuario.");
 
+console.log("Crea una función saludar(nombre) que reciba un nombre y devuelva 'Hola, [nombre]!'.");
+function saludar(nombre) {
+    console.log("¡Hola, " + nombre + "!");
+}
+saludar("María");
 
+console.log("Crea una función esPar(numero) que devuelva true si el número es par, false si es impar.");
+function esPar(numero) {
+    return numero % 2 === 0;
+}
+console.log("¿El número 7 es par? " + esPar(7));
+
+console.log("Crea una función operacionArray(arr, callback) que reciba un array de números y una función callback, y aplique la callback a cada elemento del array (usa for…of o forEach).");
+function operacionArray(arr, callback) {
+    arr.forEach(callback);
+}
+operacionArray([2, 4, 6, 8], function (num) {
+    console.log("Número multiplicado por 2: " + num * 2);
+});
+
+console.log("Crea una función flecha promedio = arr => … que devuelva el promedio de un array de números utilizando reduce.");
+function promedio(arr) {
+    return arr.reduce((acc, val) => acc + val, 0) / arr.length;
+}
+console.log("El promedio de [3, 6, 9] es: " + promedio([3, 6, 9]));
 
 //! ***************************************************************************************
 console.log("");
