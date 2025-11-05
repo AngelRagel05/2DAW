@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../actividad1/config.php";
 
 try {
     // Crear conexión con PDO

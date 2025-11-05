@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../actividad1/config.php";
 session_start();
 
 if (empty($_SESSION['user_id'])) {

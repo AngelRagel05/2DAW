@@ -2,5 +2,5 @@
 session_start();
 $_SESSION = [];
 session_destroy();
-header('Location: login.php');
+header('Location: ../actividad1/config.php');
 exit;

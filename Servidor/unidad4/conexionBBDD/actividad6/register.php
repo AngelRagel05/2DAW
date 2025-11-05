@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../actividad1/config.php";
 
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USER, DB_PASS);
