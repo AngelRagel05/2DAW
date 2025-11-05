@@ -12,7 +12,7 @@ try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $pdo->query("SELECT id, nombre_usuario, email, created_at FROM usuarios ORDER BY id");
+    $stmt = $pdo->query("SELECT id, nombre_usuario, email FROM usuarios ORDER BY id");
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());
@@ -35,7 +35,6 @@ try {
             <th>ID</th>
             <th>Nombre usuario</th>
             <th>Email</th>
-            <th>Creado</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
@@ -44,11 +43,10 @@ try {
                 <td><?= htmlspecialchars($u['id']) ?></td>
                 <td><?= htmlspecialchars($u['nombre_usuario']) ?></td>
                 <td><?= htmlspecialchars($u['email']) ?></td>
-                <td><?= htmlspecialchars($u['created_at']) ?></td>
-                <td><a href="editar_usuario.php?id=<?= $u['id'] ?>">Editar</a></td>
+                <td><a href="editarUsuario.php?id=<?= $u['id'] ?>">Editar</a></td>
                 <td>
                     <!-- Formulario POST para eliminar (mejor que GET) -->
-                    <form method="post" action="eliminar_usuario.php" style="display:inline" onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?');">
+                    <form method="post" action="eliminarUsuario.php" style="display:inline" onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?');">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($u['id']) ?>">
                         <input type="submit" value="Eliminar">
                     </form>

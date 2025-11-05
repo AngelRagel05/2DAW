@@ -2,35 +2,23 @@
 require_once "../actividad1/config.php";
 session_start();
 
-if (empty($_SESSION['user_id'])) {
-    header('Location: login.php');
+// Comprobar sesión activa
+if (!isset($_SESSION["usuario_id"])) {
+    header("Location: login.php");
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['id'])) {
-    header('Location: usuarios.php');
-    exit;
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id"])) {
+    try {
+        $stmt = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+        $stmt->bindValue(":id", $_POST["id"], PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error al eliminar usuario: " . $e->getMessage();
+        exit;
+    }
 }
 
-$id = (int) $_POST['id'];
-
-// No permitir eliminar al propio usuario por seguridad (opcional)
-if ($id === (int)$_SESSION['user_id']) {
-    // Redirigir con mensaje si quieres; aquí solo volvemos al listado
-    header('Location: usuarios.php');
-    exit;
-}
-
-try {
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USER, DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $del = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
-    $del->bindValue(':id', $id, PDO::PARAM_INT);
-    $del->execute();
-} catch (PDOException $e) {
-    // Podrías manejar el error y mostrar mensaje; aquí redirigimos
-}
-
-header('Location: usuarios.php');
+// Volver al listado tras eliminar
+header("Location: usuarios.php");
 exit;
