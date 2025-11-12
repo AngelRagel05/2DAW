@@ -20,6 +20,14 @@ export class TaskManager {
     }
 
     /**
+     * Creo una instancia única del TaskManager.
+     * @returns {TaskManager} Instancia única del gestor de tareas.
+     */
+    static geetInstance() {
+        return TaskManager.instance || new TaskManager();
+    }
+
+    /**
      * Agrega una nueva tarea al gestor.
      * @param {string} texto - Texto de la tarea.
      */
