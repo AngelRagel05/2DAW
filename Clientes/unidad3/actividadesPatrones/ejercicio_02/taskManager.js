@@ -30,7 +30,7 @@ export class TaskManager {
      * Elimina una tarea del gestor por su id.
      * @param {number} id 
      */
-    eleminarTarea(id) {
+    eliminarTarea(id) {
         this.tasks = this.tasks.filter(tarea => tarea.id !== id);
     }
 
