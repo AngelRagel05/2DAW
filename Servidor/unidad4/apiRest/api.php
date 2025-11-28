@@ -34,8 +34,8 @@ switch ($metodo) {
             echo json_encode(["error" => "Recurso no encontrado"]);
         }
 
-        $stmt = $mysql->prepare("INSERT INTO empleados (nombre, precio) VALUES (?, ?)");
-        $stmt->bind_param("sd", $datos["nombre"], $datos["precio"]);
+        $stmt = $mysql->prepare("INSERT INTO empleados (nombre, puesto, salario) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssd", $datos["nombre"], $datos["puesto"], $datos["salario"]);
         $stmt->execute();
         echo json_encode(["mensaje" => "Empleado creado", "id" => $stmt->insert_id]);
         break;
