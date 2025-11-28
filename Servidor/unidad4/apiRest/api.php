@@ -42,10 +42,38 @@ switch ($metodo) {
 
     case "PUT":
         // Logica para actualizar un recurso
+        if ($recurso == "empleados" && isset($_GET["id"])) {
+            $id = intval($_GET["id"]);
+            $datos = json_decode(file_get_contents("php://input"), true);
+            $stmt = $mysql->prepare("UPDATE empleados SET nombre=?, puesto=?, salario=? WHERE id=?");
+            $stmt->bind_param("ssdi", $datos["nombre"], $datos["puesto"], $datos["salario"], $id);
+            if ($stmt->execute()) {
+                echo json_encode(["mensaje" => "Empleado actualizado"]);
+            } else {
+                http_response_code(500);
+                echo json_encode(["error" => "Error al actualizar empleado"]);
+            }
+        } else {
+            http_response_code(400);
+            echo json_encode(["error" => "Falta el ID del empleado"]);
+        }
         break;
 
     case "DELETE":
-        // Logica para eliminar un recurso
+        if ($recurso == "empleados" && isset($_GET["id"])) {
+            $id = intval($_GET["id"]);
+            $stmt = $mysql->prepare("DELETE FROM empleados WHERE id=?");
+            $stmt->bind_param("i", $id);
+            if ($stmt->execute()) {
+                echo json_encode(["mensaje" => "Empleado eliminado"]);
+            } else {
+                http_response_code(500);
+                echo json_encode(["error" => "Error al eliminar empleado"]);
+            }
+        } else {
+            http_response_code(400);
+            echo json_encode(["error" => "Falta el ID del empleado"]);
+        }
         break;
 
     default:
@@ -53,20 +81,3 @@ switch ($metodo) {
         echo json_encode(["error" => "Método no permitido"]);
         break;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
