@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Empleados</title>
+  </head>
+  <body>
+    <h1>Nuestros Empleados</h1>
+    <ul id="listaEmpleados"></ul>
+
+    <script>
+      // Hacer una peticion GET a nuestra API REST
+      fetch("api.php?recurso=empleados")
+        .then((response) => response.json())
+        .then((empleados) => {
+          const lista = document.getElementById("listaEmpleados");
+
+          empleados.forEach((empleados) => {
+            const li = document.createElement("li");
+            li.textContent = `${empleados.nombre} - ${empleados.puesto} - ${empleados.salario}€`;
+            lista.appendChild(li);
+          });
+        }).catch((error) => {
+          console.error("Error al obtener los empleados:", error);
+        });
+    </script>
+  </body>
+</html>
