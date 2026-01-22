@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastTech - Webs rápidas y modernas</title>
+    <meta name="description" content="FastTech crea páginas web modernas y rápidas, además de consultoría digital avanzada."> 
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav id="menu">
+        <a href="#home" class="link">Inicio</a>
+        <a href="#servicios" class="link">Cosas que hacemos</a>
+        <a href="#contacto" class="link">Contactar</a>
+      </nav>
+    </header>
+
+    <main id="home">
+        <h1>Bienvenidos a FastTech</h1>
+      <img
+        src="https://via.placeholder.com/1200x400?text=BIENVENIDOS+A+FASTTECH"
+        class="banner"
+        alt="BienvenidosFasttech"
+      />
+
+      <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="https://via.placeholder.com/150" alt="Diseño web moderno" />
+            <p class="text">Hacemos webs muy rápidas y modernas para todo el mundo.</p>
+            <button onclick="alert('Más info')">Clic aquí</button>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/150" alt="Consultoría digital"/>
+            <p class="text">Consultoría de transformación digital avanzada.</p>
+            <button onclick="alert('Más info')">Clic aquí</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <form class="form-group" onsubmit="return validar()">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Pon tu nombre aquí" />
+
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" placeholder="Email" />
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+
+          <button type="submit" class="submit-btn">ENVIAR</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
