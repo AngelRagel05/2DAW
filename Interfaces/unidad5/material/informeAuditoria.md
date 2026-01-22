@@ -68,7 +68,7 @@
 
 > Capturas de pantalla de Lighthouse y WAVE aquí:  
 > ![Lighthouse Accesibilidad](WaveEvaluationDespues.png)  
-> ![Lighthouse SEO](ruta/a/captura_seo.png)  
+> ![Lighthouse SEO](LighthouseDespues.png)
 
 ---
 
