@@ -11,8 +11,8 @@
 
 | Área | Puntuación |
 |------|------------|
-| Accesibilidad | 65 / 100 |
-| SEO | 60 / 100 |
+| Accesibilidad | 56 / 100 |
+| SEO | 82 / 100 |
 
 **Problemas detectados:**
 - Menú hecho con `<div>` y `onclick` → no accesible con teclado.  
@@ -63,8 +63,8 @@
 
 | Área | Puntuación |
 |------|------------|
-| Accesibilidad | 98 / 100 |
-| SEO | 96 / 100 |
+| Accesibilidad | 100 / 100 |
+| SEO | 100 / 100 |
 
 > Capturas de pantalla de Lighthouse y WAVE aquí:  
 > ![Lighthouse Accesibilidad](WaveEvaluationDespues.png)  
