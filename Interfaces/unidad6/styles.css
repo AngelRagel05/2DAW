@@ -1,0 +1,119 @@
+:root {
+    --primario: #007a33;
+    --primario-brillante: #00ae44;
+    --primario-oscuro: #005624;
+    --acento: #ffb81c;
+    --fondo: #f4f7f9;
+    --blanco: #ffffff;
+    --texto: #1e293b;
+    --texto-muted: #64748b;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--texto);
+    background-color: var(--fondo);
+}
+
+.text-primario {
+    color: var(--primario);
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 2px solid rgba(0, 122, 51, 0.1);
+}
+
+.btn-outline-primario {
+    color: var(--primario);
+    border: 2px solid var(--primario);
+    transition: 0.3s;
+}
+
+.btn-outline-primario:hover {
+    background-color: var(--primario);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hero & Glassmorphism */
+.hero-section {
+    background: linear-gradient(135deg, var(--primario-oscuro) 0%, var(--primario) 100%);
+    border-bottom: 5px solid var(--acento);
+}
+
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 700px;
+}
+
+#buscador-tramites::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#buscador-tramites:focus {
+    box-shadow: none;
+}
+
+/* Tarjetas Premium */
+.tarjeta-tramite {
+    background: var(--blanco);
+    border-radius: 24px;
+    padding: 2.5rem;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.tarjeta-tramite:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--primario-brillante);
+}
+
+.tarjeta-tramite h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-tramite p {
+    color: var(--texto-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.boton-accion {
+    color: var(--primario);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.tarjeta-tramite:hover .boton-accion {
+    gap: 15px;
+}
+
+/* Utilidad Accesibilidad */
+.tarjeta-tramite:focus {
+    outline: 4px solid var(--acento);
+    outline-offset: 4px;
+}
+
+.btn-primario {
+    background-color: var(--primario);
+    border: none;
+    font-weight: 600;
+}
+
+.btn-primario:hover {
+    background-color: var(--primario-brillante);
+}
