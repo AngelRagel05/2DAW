@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sede Electrónica - Junta de Andalucía (Rediseño)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="faviconJunta.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="cabecera-principal">
+        <div class="contenedor">
+            <div class="area-logo">
+                <img src="logoJunta.png" alt="Junta de Andalucía"
+                    class="logo">
+                <div class="titulo-sitio">Sede Electrónica</div>
+            </div>
+            <nav class="navegacion-usuario">
+                <button class="boton boton-contorno" id="btn-carpeta">Mi Carpeta Ciudadana</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="seccion-bienvenida">
+            <div class="contenedor">
+                <h1>¿Qué gestión necesitas realizar hoy?</h1>
+                <p>Busca trámites, servicios o ayudas de forma sencilla en Andalucía.</p>
+                <div class="contenedor-busqueda">
+                    <div class="caja-busqueda">
+                        <span class="icono-busqueda"></span>
+                        <input type="text" id="buscador-tramites"
+                            placeholder="Ej: Renovación demanda empleo, Beca 6000, Discapacidad..."
+                            aria-label="Buscador de trámites">
+                        <button id="boton-limpiar" class="boton-cerrar" hidden>&times;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="servicios">
+            <div class="contenedor">
+                <div class="cabecera-seccion">
+                    <h2>Servicios más visitados</h2>
+                    <p>Acceso directo a las gestiones más comunes para la ciudadanía.</p>
+                </div>
+
+                <div class="rejilla" id="rejilla-tramites">
+                    <!-- Las tarjetas se generarán mediante JS -->
+                </div>
+
+                <div id="sin-resultados" class="alerta-sin-resultados" hidden>
+                    <p>No hemos encontrado trámites relacionados. ¿Quizás quisiste decir <a href="#"
+                            id="boton-sugerencia">ayudas</a>?</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-principal">
+        <div class="contenedor">
+            <p>&copy; 2026 Rediseño para la Actividad de Usabilidad - Jiménez Ángel</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
